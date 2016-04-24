@@ -1,0 +1,21 @@
+# Config file for the Dead Simple Majority Sleeps Plugin by
+# ben01189998819991197253.
+
+# Define the ratio of sleeping to non-sleeping players that must be reached
+# before the server will skip to dawn. Examples:
+# * 0.00 -- If anyone sleeps, the server will skip to dawn
+# * 0.50 -- (DEFAULT) 1/2 or more of the players must be sleeping
+# * 0.80 -- 4/5 or more of the players must be sleeping
+# * 1.00 -- Everyone must sleep to skip to dawn (in which case, why are you
+#             using this plugin???)
+threshold: 0.50
+
+# Settings for the message sent to players when the server skips to dawn.
+wake-up-call:
+ # Show the wake-up message to Overworld players
+ display: true
+ # Define the message
+ message: Good morning!
+ # Broadcast message to EVERYONE (including players in the Nether, End, etc.)
+ # If 'broadcast' and 'display' are both true, it will only broadcast.
+ broadcast: false
