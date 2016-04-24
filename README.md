@@ -14,3 +14,6 @@ I've never written a plugin for ~~anything~~ Spigot before, but I think
 it turned out alright. I have no idea what it's compatible with, so use
 at your own risk, but it shouldn't break anything. At least, it works on
 *my* machine.
+
+Oh yeah, did I mention I haven't tested it with more than one player on
+at a time? Let me know how it goes, please!
