@@ -1,6 +1,6 @@
 name: DSMajoritySleeps
 description: Plugin to skip to dawn when a percentage of players is asleep.
 main: com.deadsimple.majoritysleeps.Main
-version: 1.0_MC-1.9.X
+version: v1.0_MC1.8/1.9
 author: ben01189998819991197253
 website: github.com/ben01189998819991197253/DeadSimpleMajoritySleeps
