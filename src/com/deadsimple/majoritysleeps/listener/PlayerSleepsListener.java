@@ -74,7 +74,7 @@ public class PlayerSleepsListener implements Listener {
 		Player p = e.getPlayer();
 		sleepingPlayers.remove(p);
 
-		if(isNighttime()) {
+		if(sleepingPlayers.size() > 0) {
 			double percentage = percentSleeping() * 100;
 			logger.log(new LogRecord(Level.INFO, p.getDisplayName() +
 					" is no longer sleeping (" + percentage + "%/" +
@@ -90,18 +90,22 @@ public class PlayerSleepsListener implements Listener {
 
 	@EventHandler
 	public void onPlayerLeavesServer(PlayerQuitEvent e) {
+		if(sleepingPlayers.contains(e.getPlayer())) {
+			sleepingPlayers.remove(e.getPlayer());
+		}
+
 		if(world != null) {
 			if(shouldSkipToDawn()) {
 				skipToDawn();
 			}
-			else if(isNighttime() && sleepingPlayers.size() > 0) {
+			else if(isNighttime() && sleepingPlayers.size() > 1) {
 				double percentage = percentSleeping() * 100;
 				logger.log(new LogRecord(Level.INFO, e.getPlayer()
 						.getDisplayName() + " left during the night (" +
 						percentage + "%/" + (threshold * 100) + "%)."));
 
 				world.getPlayers().forEach(p -> p.sendMessage("§6§o" +
-						sleepStatus()));
+						"Someone left. " + sleepStatus()));
 			}
 			// Else it's daytime OR nobody was sleeping
 		}
