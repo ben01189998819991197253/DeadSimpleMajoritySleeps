@@ -112,7 +112,7 @@ public class PlayerSleepsListener implements Listener {
 	}
 
 	private String sleepStatus() {
-		return "(" + (percentSleeping() * 100) + "). We need at least " +
+		return "(" + (percentSleeping() * 100) + "%). We need at least " +
 				(threshold * 100) + "% sleeping to skip to dawn.";
 	}
 
